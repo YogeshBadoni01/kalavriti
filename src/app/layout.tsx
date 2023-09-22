@@ -1,8 +1,16 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter,Poppins } from 'next/font/google'
+import Header from './Components/Header'
+import Footer from './Components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
+
+const poppins =Poppins({
+    subsets:['latin'],
+    display:'swap',
+    weight: ["100","200","300","400","500","600","700","800","900"],
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +24,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={poppins.className}>
+        <Header/>
+        {children}
+        <Footer/>
+
+        {/* <script src="../path/to/flowbite/dist/flowbite.min.js"></script> */}
+        </body>
     </html>
   )
 }
